@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery console debug helper</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+		<script type="text/javascript" src="http://www.teamdf.com/jquery-plugins/resources/javascripts/prettify.js"></script>
+		<script type="text/javascript" src="../jquery.console.min.js"></script>
+		
+		<script type="text/javascript">
+			
+			$(function(){
+				// Pretty print code blocks.
+				prettyPrint();
+				
+				// Is debugging enabled??
+				if( !window.console || !window.console.log )
+				{
+					alert( 'Please make sure debugging is enabled in your browser.' );
+				}
+				
+				// Show what jquery debugger does best...
+				$('button').console('All buttons...').on('click',function(){
+					
+					switch( $(this).attr('name') )
+					{
+						case 'log' :		$.console( $('#message').val() ); break;
+						case 'warn' :		$.console( 'warn', $('#message').val() ); break; 
+						case 'error' :		$.console( 'error', $('#message').val() ); break;
+						case 'elements' : 	$($('#selector').val()).console('Elements matching selector ['+$('#selector').val()+']'); break;
+					}
+					
+				}).filter('[name="elements"]').console('Just the \'Elements\' button.');
+				
+				$.console('A log message');
+				$.console('warn','I\'m warning you...');
+				$.console('error','It\'s all going wrong...');
+			});
+			
+		</script>
+		
+		<link rel="stylesheet" href="http://www.teamdf.com/jquery-plugins/resources/stylesheets/prettify.css" type="text/css" />
+		
+		<style>
+			body{
+				font-family: sans-serif;
+			}
+			pre.prettyprint{
+				padding: 10px;
+				font-family: monospace;
+				font-size: 9pt;
+				background: #f8f8f8;
+				border: 1px solid #e4e4e4;
+			}
+			dl.list{
+				border: 1px solid #2683BD;
+				max-height: 350px;
+				margin: 0;
+				padding: 0;
+				overflow: auto;
+				position: relative;
+				font-size: 1em;
+			}
+			dl.list dt{
+				margin: 0;
+				background: #2683BD url(http://www.teamdf.com/jquery-plugins/resources/images/overlay-sprite.png) repeat-x 0 -50px;
+				font-weight: bold;
+				text-shadow: -1px -1px 0px rgba( 0, 0, 0, 0.2 ), 1px 1px 0px rgba( 255, 255, 255, 0.3 );
+				color: white;
+				padding: 8px 5px;
+				border-bottom: 1px solid #1D6FA2;
+			}
+			dl.list dd{
+				padding: 5px;
+				margin: 0;
+				border-bottom: 1px solid #F2F6FB;
+				font-size: 0.8em;
+				color: #2A5673;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>jQuery debugging</h1>
+		<!--<a href="../docs/index.html#demos">Back to Docs</a>-->
+		<p>A simple, lightweight debugging plugin which lets you easily see what's in a jquery collection at any point in a chain, while still maintaining chain-ability.</p>
+		
+		<pre class="prettyprint lang-javascript"><code>$('button').console('All buttons...').filter('[name="elements"]').console('Just the \'Elements\' button.');</code></pre>
+		
+		<input type="text" id="selector" name="selector" placeholder="Selector" />
+		<button name="elements">Log Elements</button>
+		
+		<br />
+		<br />
+		
+		<pre class="prettyprint lang-javascript"><code>$.console( $('#message').val() );
+$.console('warn', $('#message').val() );
+$.console('error', $('#message').val() );
+</code></pre>
+		
+		<input type="text" id="message" name="message" placeholder="Message" />
+		<button name="log">Log</button>
+		<button name="warn">Warn</button>
+		<button name="error">Error</button>
+	</body>
+</html>

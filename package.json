@@ -1,0 +1,39 @@
+{
+	"name"			: "df-debug-console",
+	"version"		: "1.2.1",
+	"title"			: "Console debug helper",
+	"author"		: {
+		"name"	: "Team DF",
+		"email"	: "plugins@teamdf.com",
+		"url"	: "http://teamdf.com/"
+	},
+	"maintainers"	: [
+		{
+			"name"	: "Sam Sehnert",
+			"email"	: "sam@teamdf.com"
+		}
+	],
+	"description"	: "A simple, lightweight debugging plugin which lets you easily see what's in a jquery collection at any point in a chain, while still maintaining chain-ability.",
+	"keywords"		: [
+		"debug",
+		"collection",
+		"chain",
+		"log",
+		"error"
+	],
+	"homepage"		: "https://github.com/teamdf/jquery-console/",
+	"docs"			: "https://github.com/teamdf/jquery-console/tree/master/docs",
+	"demo"			: "https://github.com/teamdf/jquery-console/",
+	"files"			: [
+		"jquery.console.js"
+	],
+	"dependancies"	: {
+		"jquery" : ">1.6.0"
+	},
+	"licenses"		: [
+		{
+		    "type": "MIT",
+		    "url": "http://teamdf.com/jquery-plugins/license/"
+		}
+	]
+}
