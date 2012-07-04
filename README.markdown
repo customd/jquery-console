@@ -14,17 +14,17 @@ The Demos for this plugin live under the examples/ directory. Open them directly
 
 Documentation
 -------------
-### Basic console useage
+### Basic console usage
 
-Print the list of elements to the console as they are at the current time in the jQuery collection.
+Print the list of elements to the console as they are at the current time in the jQuery collection:
 
 	$('.selector').console('My Elements');
 
-You can use this in the middle of a chain to figure out what elements are currently selected.
+You can use this in the middle of a chain to figure out what elements are currently selected:
 
 	$('.selector').console('Unfiltered').filter(':not(.complete)').console('Incomplete (filtered)')
 	
-There is also an easy shortcut to print console.log, console.warn and console.error messages
+There is also an easy shortcut to print console.log, console.warn and console.error messages:
 
 	$.console( 'My log message' );
 	$.console( 'warn', 'My warning message' );
@@ -34,6 +34,12 @@ We support arbitrary arguments:
 
 	$('.selector').console('Test',[1,2,3],{a:1,b:2,c:3})
 
-You can even turn off all console messages with the flick of a switch
+You can even turn off all console messages with the flick of a switch:
 
 	$.console( 'disable', true ); // false to turn it back on.
+
+License
+-------
+
+Copyright 2012, [Digital Fusion](http://teamdf.com)
+Released under the [MIT license](http://teamdf.com/jquery-plugins/license/).
