@@ -2,13 +2,15 @@ jQuery Debug Console Plugin
 ===========================
 ### By Sam Sehnert, [Digital Fusion](http://teamdf.com/) 2012
 
-A is a simple, lightweight [jQuery](http://jquery.com/) debugging plugin which lets you easily see 
+A simple, lightweight [jQuery](http://jquery.com/) debugging plugin which lets you easily see 
 what's in a jquery collection at any point in a chain, while still maintaining chain-ability.
+
+Only 441 bytes gzipped.
 
 Demos
 -----
 
-The Demos for this plugin live under the examples/ directory. Open them directly in your web browser, or view the following online examples:
+The Demos for this plugin live under the examples/ directory. Open them directly in your web browser, or view the following online example:
 
 - [Basic Example](http://www.teamdf.com/jquery-plugins/console/examples/demo-basic.html)
 
@@ -41,5 +43,5 @@ You can even turn off all console messages with the flick of a switch:
 License
 -------
 
-Copyright 2012, [Digital Fusion](http://teamdf.com)
+Copyright 2012, [Digital Fusion](http://teamdf.com),
 Released under the [MIT license](http://teamdf.com/jquery-plugins/license/).
